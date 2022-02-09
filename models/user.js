@@ -1,5 +1,5 @@
 const mongoose  = require('mongoose')
-const valitator = require('validator')
+const validator = require('validator')
 const User = mongoose.Schema({
     name:{
         type:String,
@@ -18,7 +18,7 @@ const User = mongoose.Schema({
     },
     password:{
         type:String,
-        required:[true,'Please provide a email'],
+        required:[true,'Please provide a password'],
         minlength: 6,
         
     },
