@@ -1,5 +1,6 @@
 const CustomError = require('../errors');
 const {verifyToken} = require('../utils')
+
 const authenicateUser = async (req,res,next)=>{
     const token = req.signedCookies.token
     if(!token){
