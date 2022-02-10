@@ -10,10 +10,10 @@ const {
     updateUserPassword,
 }= require('../controllers/userController')
 
-router.route('/').get(authenicateUser,authorizePermissions('admin'),getAllUsers)
-router.route('/showMe').get(showCurrentUser)
-router.route('/updateUser').patch(updateUser)
-router.route('/updateUserPassword').patch(updateUserPassword)
+router.route('/').get(authenicateUser,authorizePermissions('admin','user'),getAllUsers)
+router.route('/showMe').get(authenicateUser,showCurrentUser)
+router.route('/updateUser').patch(authenicateUser,updateUser)
+router.route('/updateUserPassword').patch(authenicateUser,updateUserPassword)
 
 router.route('/:id').get(authenicateUser,getSingleUser)
 
